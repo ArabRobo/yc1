@@ -54,14 +54,6 @@
       "value": "<b>Hello {first}\n\nAnda harus bergabung di Channel/Grup saya untuk menggunakan saya\n\nSilakan Join Ke Channel Terlebih Dahulu</b>"
     }
   },
-  "addons": [
-    {
-    "plan": "heroku-postgresql",
-      "options": {
-        "version": "12"
-      }
-    }
-  ],
   "buildpacks": [
     {
       "url": "heroku/python"
