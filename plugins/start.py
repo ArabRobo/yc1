@@ -13,6 +13,7 @@ from config import (
     DISABLE_CHANNEL_BUTTON,
     FORCE_MSG,
     PROTECT_CONTENT,
+    FORCE_SUB_CHANNEL,
     START_MSG,
 )
 from database.sql import add_user, delete_user, full_userbase, query_msg
