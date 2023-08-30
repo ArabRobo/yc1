@@ -13,7 +13,6 @@ from config import (
     DISABLE_CHANNEL_BUTTON,
     FORCE_MSG,
     PROTECT_CONTENT,
-    FORCE_SUB_CHANNEL,
     START_MSG,
 )
 from database.sql import add_user, delete_user, full_userbase, query_msg
@@ -97,20 +96,6 @@ async def start_command(client: Bot, message: Message):
             await message.reply_text("<b>Telah Terjadi Error </b>🥺")
             return
         await temp_msg.delete()
-
-        chat_member = await Bot.get_chat_member(chat_id=FORCE_SUB_CHANNEL, user_id=message.from_user.id)
-
-        # Check if the user has already invited 5 other users
-        if chat_member.invite_count >= 5:
-        # Allow the user to access the files
-            await message.reply(
-                "You have successfully invited 5 users. You can now access the files."
-            )
-        else:
-            # Ask the user to invite more users
-            await message.reply(
-                "You need to invite 5 other users to access the files. Please invite more users and try again."
-            )
 
         for msg in messages:
 
