@@ -13,6 +13,7 @@ from config import (
     DISABLE_CHANNEL_BUTTON,
     FORCE_MSG,
     PROTECT_CONTENT,
+    FORCE_SUB_GROUP,
     START_MSG,
 )
 from database.sql import add_user, delete_user, full_userbase, query_msg
@@ -45,6 +46,17 @@ async def _human_time_duration(seconds):
         if amount > 0:
             parts.append(f'{amount} {unit}{"" if amount == 1 else "s"}')
     return ", ".join(parts)
+
+MESSAGE = "Welcome to the group chat {}!"
+
+@Bot.on_message(filters.chat(FORCE_SUB_GROUP) & filters.new_chat_members)
+async def welcome(client, message):
+    # Build the new members list (with mentions) by using their first_name
+    new_members = [u.mention for u in message.new_chat_members]
+    # Build the welcome message by using the list we built above
+    text = MESSAGE.format(", ".join(new_members))
+    # Send the welcome message, without the web page preview
+    await message.reply_text(text, disable_web_page_preview=True)
 
 
 @Bot.on_message(filters.command("start") & filters.private & subsall & subsch & subsgc)
