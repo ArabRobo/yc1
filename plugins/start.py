@@ -68,7 +68,7 @@ async def welcome(client, message):
     # Build the welcome message by using the list we built above
     text = MESSAGE.format(", ".join(new_members))
     # Send the welcome message, without the web page preview
-    await message.reply_photo(foto, text, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply_photo(foto, text, reply_markup=InlineKeyboardMarkup(buttons))
 
 
 @Bot.on_message(filters.command("start") & filters.private & subsall & subsch & subsgc)
