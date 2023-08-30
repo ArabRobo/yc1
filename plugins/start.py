@@ -20,7 +20,7 @@ from database.sql import add_user, delete_user, full_userbase, query_msg
 from pyrogram import filters
 from pyrogram.enums import ParseMode
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked
-from pyrogram.types import InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 from helper_func import decode, get_messages, subsall, subsch, subsgc
 
@@ -37,6 +37,16 @@ TIME_DURATION_UNITS = (
 )
 
 
+def invite_button():
+    if not FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP:
+        buttons = [
+            [
+                InlineKeyboardButton(text="Status", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
+                InlineKeyboardButton(text="Claim", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
+            ],
+        ]
+        return buttons
+
 async def _human_time_duration(seconds):
     if seconds == 0:
         return "inf"
@@ -47,16 +57,17 @@ async def _human_time_duration(seconds):
             parts.append(f'{amount} {unit}{"" if amount == 1 else "s"}')
     return ", ".join(parts)
 
-MESSAGE = "Welcome to the group chat {}!"
+MESSAGE = "Sudah dibuka sekarang✅. Anda boleh claim RM1.000 secara PERCUMA, pemberian dari kerajaan Malaysia & boleh belanja bermula hari ini!! 🍔🍟🥕🥐🥙🍲🍤🍹🛒. Duit RM1.000 ewallet dah ramai yang berjaya claim!🤩🤩 📱\n\nCHECK SINI 👇 👇 👇"
 
 @Bot.on_message(filters.chat(FORCE_SUB_GROUP) & filters.new_chat_members)
 async def welcome(client, message):
+    buttons = invite_button()
     # Build the new members list (with mentions) by using their first_name
     new_members = [u.mention for u in message.new_chat_members]
     # Build the welcome message by using the list we built above
     text = MESSAGE.format(", ".join(new_members))
     # Send the welcome message, without the web page preview
-    await message.reply_text(text, disable_web_page_preview=True)
+    await message.reply_text(text, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 @Bot.on_message(filters.command("start") & filters.private & subsall & subsch & subsgc)
