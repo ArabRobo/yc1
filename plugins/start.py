@@ -37,16 +37,18 @@ TIME_DURATION_UNITS = (
 )
 
 
+
+links = "https://t.me/joinchat/XKs5OX266P5kYzI1"
+foto = "https://telegra.ph/file/4bbe96eaa04dfb7e06c25.png"
+
 def invite_button():
     buttons = [
         [
-            InlineKeyboardButton(text="Status", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
-            InlineKeyboardButton(text="Claim", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
+            InlineKeyboardButton(text="Status", url=f"https://t.me/joinchat/XKs5OX266P5kYzI1{links}"),
+            InlineKeyboardButton(text="Claim", url=f"https://telegram.me/share/url?url={links}"),
         ],
     ]
     return buttons
-
-foto = "https://telegra.ph/file/4bbe96eaa04dfb7e06c25.png"
 
 async def _human_time_duration(seconds):
     if seconds == 0:
