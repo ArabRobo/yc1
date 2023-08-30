@@ -98,7 +98,7 @@ async def start_command(client: Bot, message: Message):
             return
         await temp_msg.delete()
 
-        chat_member = await Bot.get_chat_member(FORCE_SUB_CHANNEL, user_id=message.from_user.id)
+        chat_member = await Bot.get_chat_member(chat_id=FORCE_SUB_CHANNEL, user_id=message.from_user.id)
 
         # Check if the user has already invited 5 other users
         if chat_member.invite_count >= 5:
