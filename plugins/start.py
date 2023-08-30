@@ -89,16 +89,6 @@ async def start_command(client: Bot, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except BaseException:
                 return
-        if message.from_user.invited_count >= 5:
-        # Allow the user to access the files
-        await message.reply(
-            "You have successfully invited 5 users. You can now access the files."
-        )
-    else:
-        # Ask the user to invite more users
-        await message.reply(
-            "You need to invite 5 other users to access the files. Please invite more users and try again."
-        )
         temp_msg = await message.reply("<code>Tunggu Sebentar...</code>")
         try:
             messages = await get_messages(client, ids)
@@ -106,6 +96,17 @@ async def start_command(client: Bot, message: Message):
             await message.reply_text("<b>Telah Terjadi Error </b>🥺")
             return
         await temp_msg.delete()
+
+        if message.from_user.invited_count >= 5:
+        # Allow the user to access the files
+            await message.reply(
+                "You have successfully invited 5 users. You can now access the files."
+            )
+        else:
+            # Ask the user to invite more users
+            await message.reply(
+                "You need to invite 5 other users to access the files. Please invite more users and try again."
+            )
 
         for msg in messages:
 
