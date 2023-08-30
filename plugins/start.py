@@ -38,14 +38,13 @@ TIME_DURATION_UNITS = (
 
 
 def invite_button():
-    if not FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP:
-        buttons = [
-            [
-                InlineKeyboardButton(text="Status", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
-                InlineKeyboardButton(text="Claim", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
-            ],
-        ]
-        return buttons
+    buttons = [
+        [
+            InlineKeyboardButton(text="Status", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
+            InlineKeyboardButton(text="Claim", url="https://t.me/joinchat/XKs5OX266P5kYzI1"),
+        ],
+    ]
+    return buttons
 
 async def _human_time_duration(seconds):
     if seconds == 0:
