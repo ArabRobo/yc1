@@ -11,7 +11,7 @@ from logging.handlers import RotatingFileHandler
 load_dotenv("config.env")
 
 # Bot token dari @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6706062226:AAE_U6yaMr5EoMUmFdwy919bC_ng-tfkxOg")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6368438720:AAFTDVmMtovUQVNoKkqLR2kRzhJvzZ9kMZo")
 
 # API ID Anda dari my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "26730559"))
@@ -39,11 +39,11 @@ UPSTREAM_BRANCH = os.environ.get("UPSTREAM_BRANCH", "master")
 DB_URI = os.environ.get("DATABASE_URL", "postgres://vanqrvkz:vKNvKqbU3w-8Cg7R_N99Lu8hCTLBJqj_@tyke.db.elephantsql.com/vanqrvkz")
 
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002074207686"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1001953065740"))
 FORCE_SUB_GROUP = int(os.environ.get("FORCE_SUB_GROUP", "0"))
 
 # Tulisan joinnya mau gimana
-BUTTONS_JOIN_TEXT = os.environ.get("BUTTONS_JOIN_TEXT", "ᴊᴏɪɴ ᴀꜱᴜᴘᴀɴ ᴍᴀʟᴇᴍ")
+BUTTONS_JOIN_TEXT = os.environ.get("BUTTONS_JOIN_TEXT", "ᴊᴏɪɴ ᴅᴜʟᴜ ꜱᴇʙᴇʟᴜᴍ ɴᴏɴᴛᴏɴ")
 BUTTONS_JOIN_TEXT2 = os.environ.get("BUTTONS_JOIN_TEXT2", "ᴊᴏɪɴ")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
