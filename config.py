@@ -20,7 +20,7 @@ APP_ID = int(os.environ.get("APP_ID", "26730559"))
 API_HASH = os.environ.get("API_HASH", "54e0fd326f54b4ea91fdcbdf98e3cf4e")
 
 # ID Channel Database
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001839380945"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001932073209"))
 
 # NAMA OWNER
 OWNER = os.environ.get("OWNER", "Dhilnihnge")
@@ -36,7 +36,7 @@ HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 UPSTREAM_BRANCH = os.environ.get("UPSTREAM_BRANCH", "master")
 
 # Database
-DB_URI = os.environ.get("DATABASE_URL", "postgres://vanqrvkz:vKNvKqbU3w-8Cg7R_N99Lu8hCTLBJqj_@tyke.db.elephantsql.com/vanqrvkz")
+DB_URI = os.environ.get("DATABASE_URL", "postgres://fuvdxmqh:bDKT-Z-PvVOK29RhDMvw9MJJnf0Gc619@arjuna.db.elephantsql.com/fuvdxmqh")
 
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1001176493240"))
